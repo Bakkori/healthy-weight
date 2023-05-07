@@ -1,4 +1,4 @@
-# bmi_calc_2
+# healthy-weight
 
 A new Flutter project.
 
