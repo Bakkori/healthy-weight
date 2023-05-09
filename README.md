@@ -2,15 +2,10 @@
 
 A new Flutter project.
 
-## Getting Started
+## About
 
-This project is a starting point for a Flutter application.
+A simple app to inform the user how much weight they should gain or loss by calculating the body mass index (BMI).
 
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
-
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+![a2](https://github.com/Bakkori/healthy-weight/assets/97407222/70b45e1f-acbe-4d46-8323-c884094df86e)
+![a1](https://github.com/Bakkori/healthy-weight/assets/97407222/9c6feeb0-6b14-45fc-84bb-28c203c62804)
+![a3](https://github.com/Bakkori/healthy-weight/assets/97407222/24e9cc2c-fad4-41a8-84d9-9fc5bbdce2bc)
