@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'input_screen.dart';
 import 'bmi_status.dart';
+import 'package:flutter_gen/gen_l10n/app_localization.dart';
 
 class ResultScreen extends StatefulWidget {
   const ResultScreen(
@@ -49,7 +50,7 @@ class _ResultScreenState extends State<ResultScreen> {
             Column(
               children: [
                 Text(
-                  'مؤشر كتلة الجسم هو',
+                  AppLocalizations.of(context)!.yourBMIis,
                   style: Style1,
                 ),
                 Padding(
@@ -57,7 +58,7 @@ class _ResultScreenState extends State<ResultScreen> {
                   child: bmiDescription.getBMI(),
                 ),
                 Text(
-                  bmiDescription.getStatus(),
+                  bmiDescription.getStatus(context),
                   style: TextStyle(
                       fontSize: 16,
                       fontWeight: FontWeight.w600,
@@ -66,9 +67,9 @@ class _ResultScreenState extends State<ResultScreen> {
                 Container(
                   padding: const EdgeInsets.fromLTRB(15, 15, 15, 0),
                   child: Text(
-                    'وزنك المناسب لطولك هو مابين'
+                    '${AppLocalizations.of(context)!.yourIdealWeightIs}'
                     ' ${widget.bestMinWeight.toStringAsFixed(1)}'
-                    ' و ${widget.bestMaxWeight.toStringAsFixed(1)} كيلوجرام',
+                    ' ${AppLocalizations.of(context)!.and} ${widget.bestMaxWeight.toStringAsFixed(1)} ${AppLocalizations.of(context)!.kg}',
                     style: Style2,
                     textAlign: TextAlign.center,
                   ),
@@ -80,7 +81,7 @@ class _ResultScreenState extends State<ResultScreen> {
                 // ),
                 Container(
                   padding: const EdgeInsets.all(15),
-                  child: bmiDescription.gainOrlose(),
+                  child: bmiDescription.gainOrlose(context),
                 )
               ],
             ),
@@ -125,7 +126,7 @@ bottomBox(BuildContext context) {
               child: Container(
                 width: 160,
                 height: 50,
-                child: const Center(child: Text('الخلف')),
+                child: Center(child: Text(AppLocalizations.of(context)!.back)),
                 decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(25),
                     color: Colors.white,

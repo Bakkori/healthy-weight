@@ -1,0 +1,22 @@
+{
+    "language": "English",
+    "greeting": "Hi",
+    "start": "Start",
+    "intro_message": "This app calculates your Body Mass Index (BMI) and tells you the weight you need to reach your ideal BMI",
+    "enterWeight": "Enter Your Weight",
+    "enterHeight": "Enter Your Height",
+    "next": "Next",
+    "back": "Go Back",
+    "yourBMIis": "Your Body Mass Index is",
+    "weightLoss": "Weight loss",
+    "weightnormal": "Healthy weight",
+    "overWeight": "Overweight",
+    "weightObesity": "Obesity",
+    "weightHighObesity": "High obesity",
+    "yourIdealWeightIs": "Your ideal weight is between",
+    "and": "and",
+    "kg":"kg",
+    "youNeedGain":"You need to gain",
+    "youNeedLoss":"You need to loss",
+    "atLeast": "at least"
+}

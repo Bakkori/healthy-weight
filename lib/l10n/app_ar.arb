@@ -1,0 +1,22 @@
+{
+    "language": "العربية",
+    "greeting": "أهلاً",
+    "start": "ابدأ",
+    "intro_message": "هذا التطبيق سوف يخبرك بمؤشر كتلة جسمك والوزن المناسب للوصول إلى كتلة الجسم الأمثل",
+    "enterWeight": "ادخل وزنك",
+    "enterHeight": "ادخل طولك",
+    "next": "التالي",
+    "back": "العودة",
+    "yourBMIis": "مؤشر كتلة الجسم هو",
+    "weightLoss": "انخفاض في الوزن",
+    "weightnormal": "وزنك طبيعي",
+    "overWeight": "زيادة في الوزن",
+    "weightObesity": "سمنة",
+    "weightHighObesity": "سمنة مفرطة",
+    "yourIdealWeightIs": "وزنك المناسب هو مابين",
+    "and": "و",
+    "kg":"كيلوجرام",
+    "youNeedGain":"يجب أن تزيد",
+    "youNeedLoss":"يجب أن تخسر",
+    "atLeast": "على الأقل"
+}

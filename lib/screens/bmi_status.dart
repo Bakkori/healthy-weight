@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_gen/gen_l10n/app_localization.dart';
 
 class BMIDescription {
   BMIDescription(
@@ -33,33 +34,32 @@ class BMIDescription {
     );
   }
 
-  String getStatus() {
+  String getStatus(BuildContext context) {
     if (bmi > 35) {
-      return 'أنت تعاني من السمنة المفرطة';
+      return AppLocalizations.of(context)!.weightHighObesity;
     } else if (bmi > 30) {
-      return 'أنت تعاني من السمنة';
+      return AppLocalizations.of(context)!.weightObesity;
     } else if (bmi > 25) {
-      return 'لديك زيادة في الوزن';
+      return AppLocalizations.of(context)!.overWeight;
     } else if (bmi >= 18.50 && bmi <= 24.9) {
-      return 'وزنك طبيعي';
+      return AppLocalizations.of(context)!.weightnormal;
     } else {
-      return 'لديك نقص في الوزن';
+      return AppLocalizations.of(context)!.weightLoss;
     }
   }
 
-  Text gainOrlose() {
+  Text gainOrlose(BuildContext context) {
     TextStyle s1 = TextStyle(
         fontSize: 14, fontWeight: FontWeight.w600, color: Colors.grey[850]);
 
     if (bmi < 18.5) {
       return Text(
-        'يجب أن تزيد ${(bestMinWeight - weight).toStringAsFixed(0)} kg على الأقل',
-        textDirection: TextDirection.rtl,
+        '${AppLocalizations.of(context)!.youNeedGain} ${(bestMinWeight - weight).toStringAsFixed(0)} kg ${AppLocalizations.of(context)!.atLeast}',
       );
     } else if (bmi > 24.9) {
       return Text(
-          'يجب أن تخسر ${(weight - bestMaxWeight).toStringAsFixed(0)} kg على الأقل',
-          textDirection: TextDirection.rtl);
+        '${AppLocalizations.of(context)!.youNeedLoss} ${(weight - bestMaxWeight).toStringAsFixed(0)} kg ${AppLocalizations.of(context)!.atLeast}',
+      );
     } else {
       return const Text(' ');
     }

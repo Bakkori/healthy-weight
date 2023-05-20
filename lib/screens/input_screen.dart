@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'result_screen.dart';
-import 'bmi_status.dart';
+import 'package:flutter_gen/gen_l10n/app_localization.dart';
 
 class InputScreen extends StatefulWidget {
   const InputScreen({Key? key}) : super(key: key);
@@ -82,14 +82,13 @@ class _InputScreenState extends State<InputScreen> {
                     } else {
                       return;
                     }
-                    ;
                   },
                   child: Container(
                     width: 160,
                     height: 50,
-                    child: const Center(
+                    child: Center(
                         child: Text(
-                      'التالي',
+                      AppLocalizations.of(context)!.next,
                       style: s1,
                     )),
                     decoration: BoxDecoration(
@@ -132,9 +131,9 @@ class _InputScreenState extends State<InputScreen> {
                   child: TextField(
                     textAlign: TextAlign.right,
                     keyboardType: TextInputType.number,
-                    decoration: const InputDecoration(
-                        labelText: 'ادخل طولك',
-                        border: OutlineInputBorder(
+                    decoration: InputDecoration(
+                        labelText: AppLocalizations.of(context)!.enterHeight,
+                        border: const OutlineInputBorder(
                             borderRadius:
                                 BorderRadius.all(Radius.circular(20.0)))),
                     controller: heightController,
@@ -148,9 +147,9 @@ class _InputScreenState extends State<InputScreen> {
                   child: TextField(
                     textAlign: TextAlign.right,
                     keyboardType: TextInputType.number,
-                    decoration: const InputDecoration(
-                        labelText: 'ادخل وزنك',
-                        border: OutlineInputBorder(
+                    decoration: InputDecoration(
+                        labelText: AppLocalizations.of(context)!.enterWeight,
+                        border: const OutlineInputBorder(
                             borderRadius:
                                 BorderRadius.all(Radius.circular(20.0)))),
                     controller: weightContoller,

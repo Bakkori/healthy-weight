@@ -1,5 +1,8 @@
+import 'package:bmi_calc_2/provider/provider.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 import 'input_screen.dart';
+import 'package:flutter_gen/gen_l10n/app_localization.dart';
 
 class WelcomeScreen extends StatefulWidget {
   const WelcomeScreen({Key? key}) : super(key: key);
@@ -11,18 +14,52 @@ class WelcomeScreen extends StatefulWidget {
 class _WelcomeScreenState extends State<WelcomeScreen> {
   @override
   Widget build(BuildContext context) {
+    final provider = Provider.of<LocalProvider>(context);
     return SafeArea(
       child: Scaffold(
         body: Column(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: [welcomBox(), bottomBox(context)],
+          children: [
+            Column(
+              children: [
+                languageSelectionBox(context, provider),
+                welcomBox(context),
+              ],
+            ),
+            bottomBox(context)
+          ],
         ),
       ),
     );
   }
 }
 
-welcomBox() {
+languageSelectionBox(BuildContext context, LocalProvider provider) {
+  return Padding(
+    padding: const EdgeInsets.all(10.0),
+    child: Row(
+      mainAxisAlignment: MainAxisAlignment.end,
+      children: [
+        InkWell(
+            onTap: () {
+              provider.setLocale(const Locale('ar'));
+            },
+            child: Text('العربية', style: TextStyle(color: Colors.blueAccent))),
+        Text(' | '),
+        InkWell(
+            onTap: () {
+              provider.setLocale(const Locale('en'));
+            },
+            child: Text(
+              'English',
+              style: TextStyle(color: Colors.blueAccent),
+            )),
+      ],
+    ),
+  );
+}
+
+welcomBox(BuildContext context) {
   return Container(
     color: Colors.grey[50],
     padding: const EdgeInsets.all(25),
@@ -31,20 +68,25 @@ welcomBox() {
       crossAxisAlignment: CrossAxisAlignment.end,
       // ignore: prefer_const_literals_to_create_immutables
       children: [
-        const Text(
-          'أهلا 👋🏽',
-          textDirection: TextDirection.rtl,
-          textAlign: TextAlign.right,
-          style: TextStyle(fontSize: 35),
+        Row(
+          children: [
+            Text(
+              (AppLocalizations.of(context)!.greeting),
+              style: const TextStyle(fontSize: 35),
+            ),
+            const Text(
+              '👋🏼',
+              style: TextStyle(fontSize: 35),
+            ),
+          ],
         ),
         const SizedBox(
           height: 5,
         ),
-        const Text(
-          'هذا التطبيق سوف يخبرك بمؤشر كتلة جسمك '
-          'والوزن المناسب للوصول إلى كتلة الجسم الأمثل ',
-          textDirection: TextDirection.rtl,
-          textAlign: TextAlign.right,
+        Text(
+          (AppLocalizations.of(context)!.intro_message),
+          // textDirection: TextDirection.rtl,
+          // textAlign: TextAlign.right,
           style: TextStyle(fontSize: 16, fontWeight: FontWeight.w600),
         ),
       ],
@@ -88,9 +130,9 @@ bottomBox(BuildContext context) {
               child: Container(
                 width: 160,
                 height: 50,
-                child: const Center(
+                child: Center(
                     child: Text(
-                  'ابدأ',
+                  (AppLocalizations.of(context)!.start),
                   style: s1,
                 )),
                 decoration: BoxDecoration(
