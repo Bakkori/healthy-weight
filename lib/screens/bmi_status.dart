@@ -27,6 +27,7 @@ class BMIDescription {
   }
 
   Text getBMI() {
+    print('$bmi description');
     return Text(
       bmi.toStringAsFixed(2),
       style: TextStyle(

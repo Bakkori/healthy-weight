@@ -1,23 +1,19 @@
+import 'package:bmi_calc_2/models/bmi_calculations.dart';
 import 'package:flutter/material.dart';
 import 'input_screen.dart';
 import 'bmi_status.dart';
 import 'package:flutter_gen/gen_l10n/app_localization.dart';
 
 class ResultScreen extends StatefulWidget {
-  const ResultScreen(
-      {Key? key,
-      required this.bmi,
-      required this.bestWeight,
-      required this.bestMinWeight,
-      required this.bestMaxWeight,
-      required this.weight})
+  const ResultScreen({Key? key, required this.bmiCalculations})
       : super(key: key);
 
-  final double bmi;
-  final double bestWeight;
-  final double bestMinWeight;
-  final double bestMaxWeight;
-  final double weight;
+  final BMICalculations bmiCalculations;
+  // final double bmi;
+  // final double bestWeight;
+  // final double bestMinWeight;
+  // final double bestMaxWeight;
+  // final double weight;
 
   @override
   _ResultScreenState createState() => _ResultScreenState();
@@ -32,9 +28,12 @@ class _ResultScreenState extends State<ResultScreen> {
 
   @override
   Widget build(BuildContext context) {
-    final bmiDescription = BMIDescription(widget.bestWeight,
-        widget.bestMinWeight, widget.bestMaxWeight, widget.weight,
-        bmi: widget.bmi);
+    final bmiDescription = BMIDescription(
+        widget.bmiCalculations.getBestWeight(),
+        widget.bmiCalculations.getBestMinWeight(),
+        widget.bmiCalculations.getBestMaxWeight(),
+        widget.bmiCalculations.weight,
+        bmi: widget.bmiCalculations.getBMI());
 
     return SafeArea(
       child: Scaffold(
@@ -68,8 +67,8 @@ class _ResultScreenState extends State<ResultScreen> {
                   padding: const EdgeInsets.fromLTRB(15, 15, 15, 0),
                   child: Text(
                     '${AppLocalizations.of(context)!.yourIdealWeightIs}'
-                    ' ${widget.bestMinWeight.toStringAsFixed(1)}'
-                    ' ${AppLocalizations.of(context)!.and} ${widget.bestMaxWeight.toStringAsFixed(1)} ${AppLocalizations.of(context)!.kg}',
+                    ' ${widget.bmiCalculations.getBestMinWeight().toStringAsFixed(1)}'
+                    ' ${AppLocalizations.of(context)!.and} ${widget.bmiCalculations.getBestMaxWeight().toStringAsFixed(1)} ${AppLocalizations.of(context)!.kg}',
                     style: Style2,
                     textAlign: TextAlign.center,
                   ),

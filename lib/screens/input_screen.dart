@@ -1,3 +1,4 @@
+import 'package:bmi_calc_2/models/bmi_calculations.dart';
 import 'package:flutter/material.dart';
 import 'result_screen.dart';
 import 'package:flutter_gen/gen_l10n/app_localization.dart';
@@ -12,31 +13,6 @@ class InputScreen extends StatefulWidget {
 class _InputScreenState extends State<InputScreen> {
   final heightController = TextEditingController();
   final weightContoller = TextEditingController();
-
-  double getHeight() {
-    // return height in meter
-    return (double.parse(heightController.text)) / 100;
-  }
-
-  double getWeight() {
-    return double.parse(weightContoller.text);
-  }
-
-  getBMI() {
-    return getWeight() / (getHeight() * getHeight());
-  }
-
-  getBestWeight() {
-    return 21.25 * (getHeight() * getHeight());
-  }
-
-  getBestMinWeight() {
-    return 18.50 * (getHeight() * getHeight());
-  }
-
-  getBestMaxWeight() {
-    return 24 * (getHeight() * getHeight());
-  }
 
   @override
   Widget build(BuildContext context) {
@@ -73,11 +49,11 @@ class _InputScreenState extends State<InputScreen> {
                           MaterialPageRoute(
                               // ignore: prefer_const_constructors
                               builder: (context) => ResultScreen(
-                                    bmi: getBMI(),
-                                    bestWeight: getBestWeight(),
-                                    weight: getWeight(),
-                                    bestMinWeight: getBestMinWeight(),
-                                    bestMaxWeight: getBestMaxWeight(),
+                                    bmiCalculations: BMICalculations(
+                                        height:
+                                            double.parse(heightController.text),
+                                        weight:
+                                            double.parse(weightContoller.text)),
                                   )));
                     } else {
                       return;
