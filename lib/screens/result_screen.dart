@@ -9,21 +9,15 @@ class ResultScreen extends StatefulWidget {
       : super(key: key);
 
   final BMICalculations bmiCalculations;
-  // final double bmi;
-  // final double bestWeight;
-  // final double bestMinWeight;
-  // final double bestMaxWeight;
-  // final double weight;
 
   @override
   _ResultScreenState createState() => _ResultScreenState();
 }
 
 class _ResultScreenState extends State<ResultScreen> {
-  // ignore: prefer_const_constructors
-  TextStyle Style1 = TextStyle(
+  TextStyle style1 = TextStyle(
       fontSize: 20, fontWeight: FontWeight.w500, color: Colors.grey[800]);
-  TextStyle Style2 = TextStyle(
+  TextStyle style2 = TextStyle(
       fontSize: 16, fontWeight: FontWeight.w600, color: Colors.grey[800]);
 
   @override
@@ -50,7 +44,7 @@ class _ResultScreenState extends State<ResultScreen> {
               children: [
                 Text(
                   AppLocalizations.of(context)!.yourBMIis,
-                  style: Style1,
+                  style: style1,
                 ),
                 Padding(
                   padding: const EdgeInsets.all(8.0),
@@ -69,15 +63,10 @@ class _ResultScreenState extends State<ResultScreen> {
                     '${AppLocalizations.of(context)!.yourIdealWeightIs}'
                     ' ${widget.bmiCalculations.getBestMinWeight().toStringAsFixed(1)}'
                     ' ${AppLocalizations.of(context)!.and} ${widget.bmiCalculations.getBestMaxWeight().toStringAsFixed(1)} ${AppLocalizations.of(context)!.kg}',
-                    style: Style2,
+                    style: style2,
                     textAlign: TextAlign.center,
                   ),
                 ),
-                // Text(
-                //   ' ${widget.bestMinWeight.toStringAsFixed(2)}'
-                //   ' and ${widget.bestMaxWeight.toStringAsFixed(2)}',
-                //   style: Style2,
-                // ),
                 Container(
                   padding: const EdgeInsets.all(15),
                   child: bmiDescription.gainOrlose(context),
@@ -113,26 +102,27 @@ bottomBox(BuildContext context) {
       Column(
         children: [
           Align(
-            //alignment: Alignment.centerLeft,
             child: InkWell(
               onTap: () {
                 Navigator.push(
                     context,
                     MaterialPageRoute(
-                        // ignore: prefer_const_constructors
-                        builder: (context) => InputScreen()));
+                        builder: (context) => const InputScreen()));
               },
               child: Container(
                 width: 160,
                 height: 50,
-                child: Center(child: Text(AppLocalizations.of(context)!.back)),
+                child: Center(
+                    child: Text(
+                  AppLocalizations.of(context)!.back,
+                  style: const TextStyle(fontWeight: FontWeight.bold),
+                )),
                 decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(25),
                     color: Colors.white,
                     border: Border.all(
-                      width: 1.0,
                       color: Colors.white,
-                      // color: const Color(0xFF707070),
+                      width: 1.0,
                     ),
                     boxShadow: [
                       BoxShadow(

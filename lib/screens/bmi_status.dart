@@ -55,11 +55,11 @@ class BMIDescription {
 
     if (bmi < 18.5) {
       return Text(
-        '${AppLocalizations.of(context)!.youNeedGain} ${(bestMinWeight - weight).toStringAsFixed(0)} kg ${AppLocalizations.of(context)!.atLeast}',
+        '${AppLocalizations.of(context)!.youNeedGain} ${(bestMinWeight - weight).toStringAsFixed(2)} kg ${AppLocalizations.of(context)!.atLeast}',
       );
     } else if (bmi > 24.9) {
       return Text(
-        '${AppLocalizations.of(context)!.youNeedLoss} ${(weight - bestMaxWeight).toStringAsFixed(0)} kg ${AppLocalizations.of(context)!.atLeast}',
+        '${AppLocalizations.of(context)!.youNeedLoss} ${(weight - bestMaxWeight).toStringAsFixed(2)} kg ${AppLocalizations.of(context)!.atLeast}',
       );
     } else {
       return const Text(' ');

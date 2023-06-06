@@ -14,9 +14,6 @@ class BMICalculations {
   }
 
   getBMI() {
-    print(weight);
-    print(height);
-    print('${weight / (getHeight() * getHeight())} calc');
     return weight / (getHeight() * getHeight());
   }
 
