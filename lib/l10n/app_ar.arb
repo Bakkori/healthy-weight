@@ -18,5 +18,8 @@
     "kg":"كيلوجرام",
     "youNeedGain":"يجب أن تزيد",
     "youNeedLoss":"يجب أن تخسر",
-    "atLeast": "على الأقل"
+    "atLeast": "على الأقل",
+    "mustBePositive": "يجب أن تكون القيم موجبة",
+    "note": "ملاحظة",
+    "close": "إغلاق"
 }

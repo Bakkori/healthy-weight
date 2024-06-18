@@ -17,9 +17,9 @@ class BMIDescription {
       return Colors.red;
     } else if (bmi > 30) {
       return Colors.orange;
-    } else if (bmi > 25) {
+    } else if (bmi > 24.9) {
       return Colors.amber;
-    } else if (bmi >= 18.50 && bmi <= 24.9) {
+    } else if (bmi >= 18.50) {
       return Colors.green;
     } else {
       return Colors.blueGrey;
@@ -40,7 +40,7 @@ class BMIDescription {
       return AppLocalizations.of(context)!.weightHighObesity;
     } else if (bmi > 30) {
       return AppLocalizations.of(context)!.weightObesity;
-    } else if (bmi > 25) {
+    } else if (bmi > 24.9) {
       return AppLocalizations.of(context)!.overWeight;
     } else if (bmi >= 18.50 && bmi <= 24.9) {
       return AppLocalizations.of(context)!.weightnormal;

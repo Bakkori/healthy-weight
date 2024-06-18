@@ -18,5 +18,8 @@
     "kg":"kg",
     "youNeedGain":"You need to gain",
     "youNeedLoss":"You need to loss",
-    "atLeast": "at least"
+    "atLeast": "at least",
+    "mustBePositive":"Values must be positive numbers",
+    "note":"Note",
+    "close": "Close"
 }

@@ -44,13 +44,14 @@ languageSelectionBox(BuildContext context, LocalProvider provider) {
             onTap: () {
               provider.setLocale(const Locale('ar'));
             },
-            child: Text('العربية', style: TextStyle(color: Colors.blueAccent))),
-        Text(' | '),
+            child: const Text('العربية',
+                style: TextStyle(color: Colors.blueAccent))),
+        const Text(' | '),
         InkWell(
             onTap: () {
               provider.setLocale(const Locale('en'));
             },
-            child: Text(
+            child: const Text(
               'English',
               style: TextStyle(color: Colors.blueAccent),
             )),
@@ -87,7 +88,7 @@ welcomBox(BuildContext context) {
           (AppLocalizations.of(context)!.intro_message),
           // textDirection: TextDirection.rtl,
           // textAlign: TextAlign.right,
-          style: TextStyle(fontSize: 16, fontWeight: FontWeight.w600),
+          style: const TextStyle(fontSize: 16, fontWeight: FontWeight.w600),
         ),
       ],
     ),

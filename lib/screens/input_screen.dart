@@ -44,6 +44,31 @@ class _InputScreenState extends State<InputScreen> {
                   children: [
                     InkWell(
                       onTap: () {
+                        if ((int.parse(heightController.text)) <= 0 ||
+                            int.parse(weightContoller.text) <= 0) {
+                          setState(() {
+                            showDialog(
+                                context: context,
+                                builder: (context) {
+                                  return AlertDialog(
+                                    actions: [
+                                      TextButton(
+                                          onPressed: () {
+                                            Navigator.of(context).pop();
+                                          },
+                                          child: Text(
+                                              AppLocalizations.of(context)!
+                                                  .close))
+                                    ],
+                                    title: Text(
+                                        AppLocalizations.of(context)!.note),
+                                    content: Text(AppLocalizations.of(context)!
+                                        .mustBePositive),
+                                  );
+                                });
+                          });
+                          return;
+                        }
                         if (heightController.text.isNotEmpty &&
                             weightContoller.text.isNotEmpty) {
                           Navigator.push(
